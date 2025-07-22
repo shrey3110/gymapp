@@ -1,32 +1,26 @@
-const CACHE_NAME = 'gym-bros-tracker-v1';
-const URLS_TO_CACHE = [
+// This is a basic service worker.
+const CACHE_NAME = 'gym-bros-cache-v1';
+const urlsToCache = [
   '/',
-  'index.html',
-  // Add other files you want to cache here, like CSS, other JS files, or images.
-  // For now, we'll keep it simple.
+  '/index.html'
+  // You can add more files to cache here, like CSS or key images
 ];
 
-// Install the service worker and cache the app shell
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then(cache => {
         console.log('Opened cache');
-        return cache.addAll(URLS_TO_CACHE);
+        return cache.addAll(urlsToCache);
       })
   );
 });
 
-// Serve cached content when offline
 self.addEventListener('fetch', event => {
   event.respondWith(
     caches.match(event.request)
       .then(response => {
-        // Cache hit - return response
-        if (response) {
-          return response;
-        }
-        return fetch(event.request);
+        return response || fetch(event.request);
       })
   );
 });
