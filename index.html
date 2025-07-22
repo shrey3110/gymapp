@@ -1,16 +1,17 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Savage Gym Tracker</title>
+    <title>GYM BROS TRACKER</title>
 
     <!-- PWA Meta Tags -->
     <meta name="theme-color" content="#0a0a0a">
     <meta name="description" content="Track your gym progress with the bros, and roast them into gains.">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Savage Gym">
+    <meta name="apple-mobile-web-app-title" content="Gym Bros">
     
     <!-- PWA Manifest (Now linked to an external file) -->
     <link rel="manifest" href="manifest.json">
@@ -139,9 +140,9 @@
         @keyframes float-4 { 0% { transform: translate(-50%, -50%) translate(0vw, 0vh) rotate(0deg); } 25% { transform: translate(-50%, -50%) translate(-20vw, -10vh) scale(0.9) rotate(-7deg); } 50% { transform: translate(-50%, -50%) translate(10vw, 20vh) scale(1.1) rotate(8deg); } 75% { transform: translate(-50%, -50%) translate(-18vw, -5vh) scale(0.97) rotate(-2deg); } 100% { transform: translate(-50%, -50%) translate(0vw, 0vh) rotate(0deg); } }
         @keyframes float-5 { 0% { transform: translate(-50%, -50%) translate(0vw, 0vh) scale(1) rotate(0deg); } 25% { transform: translate(-50%, -50%) translate(8vw, 22vh) scale(1.03) rotate(1deg); } 50% { transform: translate(-50%, -50%) translate(-22vw, -8vh) scale(0.96) rotate(-4deg); } 75% { transform: translate(-50%, -50%) translate(15vw, -15vh) scale(1.09) rotate(6deg); } 100% { transform: translate(-50%, -50%) translate(0vw, 0vh) scale(1) rotate(0deg); } }
         @keyframes float-6 { 0% { transform: translate(-50%, -50%) translate(0vw, 0vh) scale(1) rotate(0deg); } 25% { transform: translate(-50%, -50%) translate(-15vw, -18vh) scale(0.92) rotate(-5deg); } 50% { transform: translate(-50%, -50%) translate(25vw, 10vh) scale(1.07) rotate(3deg); } 75% { transform: translate(-50%, -50%) translate(-8vw, 20vh) scale(0.99) rotate(-1deg); } 100% { transform: translate(-50%, -50%) translate(0vw, 0vh) scale(1) rotate(0deg); } }
-        @keyframes float-7 { 0% { transform: translate(-50%, -50%) translate(0vw, 0vh) scale(1) rotate(0deg); } 25% { transform: translate(-50%, -50%) translate(12vw, 25vh) scale(1.06) rotate(4deg); } 50% { transform: translate(-50%, -50%) translate(-20vw, -10vh) scale(0.93) rotate(-6deg); } 75% { transform: translate(-50%, -50%) translate(5vw, -22vh) scale(1.04) rotate(2deg); } 100% { transform: translate(-50%, -50%) translate(0vw, 0vh) scale(1) rotate(0deg); } }
-        @keyframes float-8 { 0% { transform: translate(-50%, -50%) translate(0vw, 0vh) scale(1) rotate(0deg); } 25% { transform: translate(-50%, -50%) translate(-25vw, 5vh) scale(0.91) rotate(-8deg); } 50% { transform: translate(-50%, -50%) translate(10vw, -20vh) scale(1.08) rotate(7deg); } 75% { transform: translate(-50%, -50%) translate(-12vw, 15vh) scale(0.96) rotate(-3deg); } 100% { transform: translate(-50%, -50%) translate(0vw, 0vh) scale(1) rotate(0deg); } }
-        @keyframes float-9 { 0% { transform: translate(-50%, -50%) translate(0vw, 0vh) scale(1) rotate(0deg); } 25% { transform: translate(-50%, -50%) translate(18vw, -10vh) scale(1.02) rotate(2deg); } 50% { transform: translate(-50%, -50%) translate(-5vw, 22vh) scale(0.98) rotate(-4deg); } 75% { transform: translate(-50%, -50%) translate(22vw, 8vh) scale(1.05) rotate(5deg); } 100% { transform: translate(-50%, -50%) translate(0vw, 0vh) scale(1) rotate(0deg); } }
+        @keyframes float-7 { 0% { transform: translate(-50%, -50%) translate(0vw, 0vh) rotate(0deg); } 25% { transform: translate(-50%, -50%) translate(12vw, 25vh) scale(1.06) rotate(4deg); } 50% { transform: translate(-50%, -50%) translate(-20vw, -10vh) scale(0.93) rotate(-6deg); } 75% { transform: translate(-50%, -50%) translate(5vw, -22vh) scale(1.04) rotate(2deg); } 100% { transform: translate(-50%, -50%) translate(0vw, 0vh) rotate(0deg); } }
+        @keyframes float-8 { 0% { transform: translate(-50%, -50%) translate(0vw, 0vh) scale(1) rotate(0deg); } 25% { transform: translate(-50%, -50%) translate(-25vw, 5vh) scale(0.91) rotate(-8deg); } 50% { transform: translate(-50%, -50%) translate(10vw, -20vh) scale(1.08) rotate(7deg); } 75% { transform: translate(-50%, -50%) translate(-12vw, 15vh) scale(0.96) rotate(-3deg); } 100% { transform: translate(-50%, -50%) translate(0vw, 0vh) rotate(0deg); } }
+        @keyframes float-9 { 0% { transform: translate(-50%, -50%) translate(0vw, 0vh) scale(1) rotate(0deg); } 25% { transform: translate(-50%, -50%) translate(18vw, -10vh) scale(1.02) rotate(2deg); } 50% { transform: translate(-50%, -50%) translate(-5vw, 22vh) scale(0.98) rotate(-4deg); } 75% { transform: translate(-50%, -50%) translate(22vw, 8vh) scale(1.05) rotate(5deg); } 100% { transform: translate(-50%, -50%) translate(0vw, 0vh) rotate(0deg); } }
 
 
         .user-card:hover {
@@ -194,7 +195,7 @@
             background: #444;
         }
 
-        /* My Profile Header Button */
+        /* My Profile Header Button (merged with user name/avatar) */
         .my-profile-header-btn {
             display: flex;
             align-items: center;
@@ -207,6 +208,7 @@
             transition: all 0.2s;
             flex-grow: 1; /* Allow it to take up space */
             justify-content: flex-start; /* Align content to start */
+            min-width: 150px; /* Ensure a decent click area */
         }
         .my-profile-header-btn:hover {
             background: rgba(255,255,255,0.1);
@@ -214,7 +216,13 @@
         }
         .my-profile-header-btn.glowing-border {
             box-shadow: 0 0 8px var(--secondary-color), 0 0 15px var(--secondary-color); /* Stronger glow for streak */
+            animation: pulse-glow 1.5s infinite alternate; /* Pulsing glow */
         }
+        @keyframes pulse-glow {
+            from { box-shadow: 0 0 8px var(--secondary-color), 0 0 15px var(--secondary-color); }
+            to { box-shadow: 0 0 12px var(--secondary-color), 0 0 20px var(--secondary-color); }
+        }
+
 
         .header-avatar {
             width: 40px;
@@ -332,6 +340,7 @@
             background: var(--card-bg);
             padding: 30px;
             border-radius: 20px;
+            margin-bottom: 20px; /* Adjusted for tighter spacing */
         }
 
         .day-selection h2 {
@@ -394,6 +403,7 @@
             background: var(--card-bg);
             padding: 30px;
             border-radius: 20px;
+            margin-bottom: 20px; /* Adjusted for tighter spacing */
         }
 
         .workout-section h2 {
@@ -1076,6 +1086,10 @@
             padding: 30px;
             border-radius: 20px;
             margin-bottom: 30px;
+            /* Tighter spacing for cards within community */
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
         }
 
         .community-title {
@@ -1088,10 +1102,10 @@
             background: var(--section-bg);
             padding: 20px;
             border-radius: 15px;
-            margin-bottom: 15px;
             border: 1px solid #222;
             cursor: pointer;
             transition: all 0.2s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
         .user-summary:hover {
             border-color: var(--primary-color);
@@ -1142,6 +1156,42 @@
         .breakdown-label {
             font-size: 0.7rem;
             color: var(--text-muted);
+        }
+
+
+        /* Today's Warriors Breakdown (new section) */
+        .todays-warriors-breakdown {
+            background: var(--section-bg);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #222;
+        }
+        .todays-warriors-breakdown h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        .todays-warriors-breakdown ul {
+            list-style: none;
+            padding: 0;
+        }
+        .todays-warriors-breakdown li {
+            padding: 8px 0;
+            border-bottom: 1px solid #222;
+            color: var(--text-light);
+            font-size: 1rem;
+        }
+        .todays-warriors-breakdown li:last-child {
+            border-bottom: none;
+        }
+        .todays-warriors-breakdown span {
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+        .todays-warriors-breakdown .user-list {
+            color: var(--text-muted);
+            font-size: 0.9rem;
         }
 
 
@@ -1274,12 +1324,97 @@
             }
         }
 
+        /* Protein Toggle Switch */
+        .protein-toggle-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px auto; /* Center it */
+            cursor: pointer;
+            position: relative;
+            width: 250px; /* Increased width */
+            height: 60px; /* Increased height */
+            background-color: #333;
+            border-radius: 30px; /* Rounded corners */
+            transition: background-color 0.3s;
+            box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+        }
+
+        .protein-toggle-switch {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #333;
+            border-radius: 30px;
+            transition: background-color 0.3s;
+            box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+        }
+
+        .protein-toggle-switch.active {
+            background: linear-gradient(90deg, var(--secondary-color) 0%, #4ade80 100%);
+        }
+
+        .protein-toggle-handle {
+            position: absolute;
+            width: 56px; /* Slightly smaller than height to show border */
+            height: 56px;
+            border-radius: 50%;
+            background-color: var(--text-light);
+            top: 2px;
+            left: 2px;
+            transition: transform 0.3s, background-color 0.3s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem; /* Larger emoji */
+            z-index: 1; /* Ensure handle is above switch background */
+        }
+
+        .protein-toggle-switch.active .protein-toggle-handle {
+            transform: translateX(188px); /* Move handle to the right (250 - 56 - 2*2) */
+        }
+
+        .protein-toggle-label {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            z-index: 0; /* Behind handle */
+        }
+
+        /* Screen shake animation for PR */
+        @keyframes screen-shake {
+            0% { transform: translate(1px, 1px) rotate(0deg); }
+            10% { transform: translate(-1px, -2px) rotate(-1deg); }
+            20% { transform: translate(-3px, 0px) rotate(1deg); }
+            30% { transform: translate(3px, 2px) rotate(0deg); }
+            40% { transform: translate(1px, -1px) rotate(1deg); }
+            50% { transform: translate(-1px, 2px) rotate(-1deg); }
+            60% { transform: translate(-3px, 1px) rotate(0deg); }
+            70% { transform: translate(3px, 1px) rotate(-1deg); }
+            80% { transform: translate(-1px, -1px) rotate(1deg); }
+            90% { transform: translate(1px, 2px) rotate(0deg); }
+            100% { transform: translate(1px, -2px) rotate(-1deg); }
+        }
+        .shake-active {
+            animation: screen-shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+            transform: translate3d(0, 0, 0);
+            backface-visibility: hidden;
+            perspective: 1000px;
+        }
+
     </style>
 </head>
 <body>
     <!-- Login Screen -->
     <div class="login-screen" id="loginScreen">
-        <h1>SAVAGE GYM TRACKER</h1>
+        <h1>GYM BROS TRACKER</h1>
         <div class="user-list-container" id="userListContainer">
             <!-- User cards will be dynamically loaded here -->
         </div>
@@ -1291,7 +1426,7 @@
         <div class="app-header">
             <div class="header-content">
                 <button class="back-btn" id="appBackButton" onclick="goBack()">⬅ BACK</button>
-                <button class="my-profile-header-btn" onclick="showView('myProfileSection')">
+                <button class="my-profile-header-btn" id="myProfileHeaderBtn" onclick="showView('myProfileSection')">
                     <div class="header-avatar">👤</div>
                     <div class="header-user-name" id="userDisplay"></div>
                 </button>
@@ -1353,10 +1488,12 @@
                 <div class="workout-section" id="workoutSection">
                     <h2 id="workoutTitle" class="section-title"></h2>
                     <div id="exercisesContainer"></div>
-                    <label class="protein-checkbox" style="display:flex; align-items:center; justify-content:center; gap: 10px; font-size: 1.1rem; cursor: pointer; margin: 20px 0;">
-                        <input type="checkbox" id="workoutProteinCheck" onchange="saveProteinStatus()">
-                        <span>Did you have 80g+ protein today? 💪</span>
-                    </label>
+                    <div class="protein-toggle-container" onclick="toggleProteinStatus()">
+                        <div class="protein-toggle-switch" id="proteinToggleSwitch">
+                            <div class="protein-toggle-handle" id="proteinToggleHandle">🧃</div>
+                        </div>
+                        <span class="protein-toggle-label">80g+ Protein Today</span>
+                    </div>
                     <button class="save-workout-btn" onclick="saveWorkout()">SAVE WORKOUT</button>
                 </div>
 
@@ -1511,19 +1648,29 @@
                 <!-- My Profile Button (moved here) -->
                 <button class="show-all-btn" onclick="showView('myProfileSection')" style="margin-bottom: 20px;">My Profile</button>
 
+                <!-- Today's Warriors Breakdown (New Section) -->
+                <div class="sidebar-section todays-warriors-breakdown">
+                    <h3>🏋️ TODAY'S WARRIORS</h3>
+                    <ul id="todaysWarriorsBreakdownList">
+                        <!-- Content generated by JS -->
+                    </ul>
+                </div>
+
                 <!-- Daily Highlights -->
                 <div class="sidebar-section">
-                    <h3 class="sidebar-title">Today's Warriors 💪</h3>
+                    <h3 class="sidebar-title">Daily Roasts & Highlights 💪</h3>
                     <div id="dailyHighlightsContainer"></div>
                 </div>
 
                 <!-- Protein Tracking Section -->
                 <div class="sidebar-section">
                     <h3 class="sidebar-title">🥩 Daily Protein Target</h3>
-                    <label class="protein-checkbox" style="display:flex; align-items:center; justify-content:center; gap: 10px; font-size: 1.1rem; cursor: pointer; margin: 10px 0;">
-                        <input type="checkbox" id="proteinCheck" onchange="saveProteinStatus()">
-                        <span>80g+ Protein Today</span>
-                    </label>
+                    <div class="protein-toggle-container" onclick="toggleProteinStatus()">
+                        <div class="protein-toggle-switch" id="proteinToggleSwitch">
+                            <div class="protein-toggle-handle" id="proteinToggleHandle">🧃</div>
+                        </div>
+                        <span class="protein-toggle-label">80g+ Protein Today</span>
+                    </div>
                     <div class="protein-stats" id="proteinStats" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
                          <!-- Protein stats will be loaded here -->
                     </div>
@@ -1544,8 +1691,6 @@
 
     <script>
         // Exercise templates
-        // This will now be the DEFAULT template for new users.
-        // Each user will have their own copy stored in localStorage.
         const defaultExerciseTemplates = {
             chest: ['Chest Overhead Press', 'Cable Chest Fly', 'Shoulder Overhead Press', 'Machine Chest Press', 'Dumbbell Lateral Raise', ''],
             back: ['Pull-up', 'Lat Pulldown', 'Seated Cable Row', 'T-Bar Row (Substitute)', 'Face Pull', ''],
@@ -1560,7 +1705,7 @@
             "is a pathetic weakling who's allergic to gains 🤡",
             "probably cried looking at the weights today 😭",
             "thinks protein shakes are meal replacements 🤦‍♂️",
-            "is building that dad bod at 20 �",
+            "is building that dad bod at 20 🍺",
             "has the testosterone levels of a newborn 👶",
             "makes excuses like it's cardio 🏃‍♂️",
             "is cultivating mass... of fat 🐷",
@@ -2013,7 +2158,7 @@
             
             const a = document.createElement('a');
             a.href = url;
-            a.download = `savage-gym-tracker-backup-${new Date().toISOString().split('T')[0]}.json`;
+            a.download = `gym-bros-tracker-backup-${new Date().toISOString().split('T')[0]}.json`;
             a.click();
             URL.revokeObjectURL(url);
         }
@@ -2135,48 +2280,63 @@
             const proteinKey = `protein_${currentUser}`;
             const proteinData = JSON.parse(localStorage.getItem(proteinKey) || '{}');
             
-            const proteinCheck = document.getElementById('proteinCheck');
-            if (proteinCheck) {
-                proteinCheck.checked = proteinData[today] || false;
+            // Update protein toggle switch
+            const proteinToggleSwitch = document.getElementById('proteinToggleSwitch');
+            const proteinToggleHandle = document.getElementById('proteinToggleHandle');
+            if (proteinToggleSwitch && proteinToggleHandle) {
+                if (proteinData[today]) {
+                    proteinToggleSwitch.classList.add('active');
+                    proteinToggleHandle.textContent = '🐂'; // Or other emoji for active
+                } else {
+                    proteinToggleSwitch.classList.remove('active');
+                    proteinToggleHandle.textContent = '🧃'; // Or other emoji for inactive
+                }
             }
-            const workoutProteinCheck = document.getElementById('workoutProteinCheck');
-            if (workoutProteinCheck) {
-                workoutProteinCheck.checked = proteinData[today] || false;
-            }
-            
+
             updateProteinStats();
         }
 
-        function saveProteinStatus() {
+        function toggleProteinStatus() {
             const today = new Date().toDateString();
             const proteinKey = `protein_${currentUser}`;
             const proteinData = JSON.parse(localStorage.getItem(proteinKey) || '{}');
             
-            const proteinCheck = document.getElementById('proteinCheck');
-            const isChecked = proteinCheck ? proteinCheck.checked : false;
-            
-            proteinData[today] = isChecked;
-            
-            localStorage.setItem(proteinKey, JSON.stringify(proteinData));
-            
-            const workoutProteinCheck = document.getElementById('workoutProteinCheck');
-            if (workoutProteinCheck) {
-                workoutProteinCheck.checked = isChecked;
-            }
-            
-            updateProteinStats();
-            loadStats(); 
-            loadCommunity();
+            const proteinToggleSwitch = document.getElementById('proteinToggleSwitch');
+            const proteinToggleHandle = document.getElementById('proteinToggleHandle');
 
-            // Confetti for protein hit
-            if (isChecked) {
-                spawnConfetti();
+            const isCurrentlyActive = proteinToggleSwitch.classList.contains('active');
+            
+            if (isCurrentlyActive) {
+                proteinData[today] = false;
+                proteinToggleSwitch.classList.remove('active');
+                proteinToggleHandle.textContent = '🧃';
+            } else {
+                proteinData[today] = true;
+                proteinToggleSwitch.classList.add('active');
+                proteinToggleHandle.textContent = '🐂'; // Default active emoji
                 // "Brah, don't lie" check
                 const now = new Date();
                 if (now.getHours() < 20 && !localStorage.getItem('proteinLieRoastShownToday')) { // Before 8 PM and not shown today
                     showModal("Brah, don’t lie. It's too early to claim that protein. 🧢", "Oops");
                     localStorage.setItem('proteinLieRoastShownToday', today.toDateString()); // Mark shown for today
                 }
+            }
+            
+            localStorage.setItem(proteinKey, JSON.stringify(proteinData));
+            
+            // Sync with workout protein checkbox (if it exists)
+            // Removed this as the toggle is the primary control now
+            // const workoutProteinCheck = document.getElementById('workoutProteinCheck');
+            // if (workoutProteinCheck) {
+            //     workoutProteinCheck.checked = proteinData[today];
+            // }
+            
+            updateProteinStats();
+            loadStats(); 
+            loadCommunity();
+
+            if (proteinData[today]) { // If protein is now marked true
+                spawnConfetti();
             }
         }
 
@@ -2587,8 +2747,9 @@
                 exercises: filteredWorkout
             };
             
-            const workoutProteinCheck = document.getElementById('workoutProteinCheck');
-            const proteinChecked = workoutProteinCheck ? workoutProteinCheck.checked : false;
+            const proteinToggleSwitch = document.getElementById('proteinToggleSwitch');
+            const proteinChecked = proteinToggleSwitch ? proteinToggleSwitch.classList.contains('active') : false;
+
             if (proteinChecked) {
                 const today = new Date().toDateString();
                 const proteinKey = `protein_${currentUser}`;
@@ -2607,6 +2768,12 @@
             
             showModal('Workout saved! 💪', 'OK', () => {
                 spawnConfetti(); // Confetti on successful save
+                // Screen shake/flash for PR (conceptual)
+                document.body.classList.add('shake-active');
+                setTimeout(() => {
+                    document.body.classList.remove('shake-active');
+                }, 500);
+
                 showView('daySelection');
                 loadStats();
                 loadLeaderboards();
@@ -2778,6 +2945,56 @@
             if (todayWorkouts.length === 0 && yesterdayWorkouts.length === 0 && skippers.length === userList.length) {
                  container.innerHTML = '<p style="color: var(--text-muted); text-align: center;">No workout activity recently.</p>';
             }
+
+            // Update Today's Warriors Breakdown
+            loadTodaysWarriorsBreakdown();
+        }
+
+        // Load Today's Warriors Breakdown
+        function loadTodaysWarriorsBreakdown() {
+            const listContainer = document.getElementById('todaysWarriorsBreakdownList');
+            if (!listContainer) return;
+            listContainer.innerHTML = '';
+
+            const today = new Date();
+            today.setHours(0,0,0,0);
+            const todayStr = today.toDateString();
+
+            const workoutBreakdown = {}; // { 'chest': ['Aadi', 'Akshal'], 'back': ['Jay'], ... }
+
+            userList.forEach(user => {
+                const userKey = `workouts_${user}`;
+                const history = JSON.parse(localStorage.getItem(userKey) || '[]');
+                const workoutToday = history.find(w => new Date(w.date).toDateString() === todayStr);
+
+                if (workoutToday) {
+                    const mainDay = workoutToday.day; // e.g., 'chest', 'back', 'push', 'pull'
+                    if (!workoutBreakdown[mainDay]) {
+                        workoutBreakdown[mainDay] = [];
+                    }
+                    workoutBreakdown[mainDay].push(user);
+                }
+            });
+
+            const orderedDays = ['chest', 'back', 'arms', 'legs', 'push', 'pull'];
+            let hasBreakdown = false;
+
+            orderedDays.forEach(day => {
+                if (workoutBreakdown[day] && workoutBreakdown[day].length > 0) {
+                    hasBreakdown = true;
+                    const listItem = document.createElement('li');
+                    listItem.innerHTML = `<span>${day.toUpperCase()}:</span> <span class="user-list">${workoutBreakdown[day].join(', ')}</span>`;
+                    listContainer.appendChild(listItem);
+                }
+            });
+
+            if (!hasBreakdown) {
+                const listItem = document.createElement('li');
+                listItem.style.color = 'var(--text-muted)';
+                listItem.style.textAlign = 'center';
+                listItem.textContent = 'No workouts logged yet today. Slackers.';
+                listContainer.appendChild(listItem);
+            }
         }
 
 
@@ -2819,6 +3036,11 @@
                     checkDate.setDate(checkDate.getDate() - i);
                     if (proteinData[checkDate.toDateString()]) {
                         last7DaysProtein++;
+                    }
+                    // Auto-roast for low protein (if not today)
+                    const proteinRoastKey = `proteinRoast_${user}_${checkDate.toDateString()}`;
+                    if (!proteinData[checkDate.toDateString()] && daysSinceProtein > 0 && daysSinceProtein < 3 && !localStorage.getItem(proteinRoastKey)) {
+                         // This is handled in updateProteinShoutoutsContent now
                     }
                 }
                 
@@ -2982,7 +3204,7 @@
                 
                 const summaryDiv = document.createElement('div');
                 summaryDiv.className = 'user-summary';
-                summaryDiv.setAttribute('onclick', `showUserProfile('${user}')`);
+                summaryDiv.setAttribute('onclick', `showUserProfile('${user}', true)`); // Pass true for readOnly
                 summaryDiv.innerHTML = `
                     <div class="user-summary-header">
                         <span class="user-summary-name">${user}</span>
@@ -3017,7 +3239,7 @@
         }
 
         // Show a specific user's profile and workout history
-        function showUserProfile(username) {
+        function showUserProfile(username, readOnly = false) {
             showView('userProfileView');
             const profileTitleElement = document.getElementById('userProfileView').querySelector('.profile-title');
             if (profileTitleElement) {
@@ -3118,6 +3340,31 @@
                     otherUserProfileWorkoutsDiv.appendChild(workoutDiv);
                 });
             });
+
+            // Add Report Roast / React buttons if in read-only mode
+            if (readOnly) {
+                const reactButtonsContainer = document.createElement('div');
+                reactButtonsContainer.style.cssText = `
+                    display: flex; justify-content: center; gap: 15px; margin-top: 30px;
+                `;
+                reactButtonsContainer.innerHTML = `
+                    <button class="show-all-btn" onclick="reactToProfile('${username}', '🔥')">🔥 React</button>
+                    <button class="show-all-btn" onclick="reactToProfile('${username}', '💩')">💩 React</button>
+                    <button class="show-all-btn" onclick="reactToProfile('${username}', '😂')">😂 React</button>
+                    <button class="show-all-btn danger" onclick="reportRoast('${username}')">Report Roast</button>
+                `;
+                document.getElementById('userProfileView').appendChild(reactButtonsContainer);
+            }
+        }
+
+        function reactToProfile(username, emoji) {
+            showModal(`You reacted to ${username}'s profile with ${emoji}!`, 'OK');
+            // In a real app, this would send data to a backend
+        }
+
+        function reportRoast(username) {
+            showModal(`You reported a roast on ${username}'s profile. The council will review.`, 'OK');
+            // In a real app, this would send data to a backend
         }
 
         // New function to load My Profile data
@@ -3170,7 +3417,7 @@
             renderWorkoutHeatmap(history, 'workoutHeatmap');
 
             // Update glowing border for My Profile header button
-            const myProfileHeaderBtn = document.querySelector('.my-profile-header-btn');
+            const myProfileHeaderBtn = document.getElementById('myProfileHeaderBtn');
             if (myProfileHeaderBtn) {
                 if (myWorkoutStreak > 3) {
                     myProfileHeaderBtn.classList.add('glowing-border');
@@ -3419,4 +3666,3 @@
     </script>
 </body>
 </html>
-�
