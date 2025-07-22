@@ -182,13 +182,21 @@
             box-shadow: var(--neon-glow);
         }
 
-        /* Main Content Grid (Mobile First) */
+        /* Main Content Layout */
         .main-content {
             max-width: 1200px; margin: 0 auto; padding: 20px;
-            display: grid; grid-template-columns: 1fr; gap: 20px;
         }
+        
+        #daySelection {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        
         @media (min-width: 1024px) {
-            .main-content { grid-template-columns: 1fr 350px; }
+            #daySelection {
+                grid-template-columns: 1fr 350px;
+            }
         }
 
         .main-section, .sidebar { display: flex; flex-direction: column; gap: 20px; }
@@ -323,12 +331,11 @@
 
         /* PWA Install Button */
         .install-btn {
-            position: fixed; bottom: 20px; right: 20px;
             background: linear-gradient(135deg, var(--primary-color) 0%, #764ba2 100%);
             color: var(--text-light); border: none; padding: 15px 25px;
             border-radius: 50px; font-size: 1rem; font-weight: 600;
             cursor: pointer; box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
-            transition: transform 0.3s; z-index: 1000;
+            transition: transform 0.3s;
         }
         .install-btn:hover { transform: scale(1.05); }
         
@@ -375,22 +382,19 @@
                 </div>
                 <div class="header-actions">
                     <button class="fellow-bros-btn" onclick="showView('communityHubPage')">Fellow Bros</button>
-                    <button class="header-action-btn" onclick="logout()">Switch</button>
                 </div>
             </div>
         </div>
 
-        <!-- Main Content Grid -->
+        <!-- Main Content Area -->
         <div class="main-content">
-            <!-- Main Section -->
-            <div class="main-section">
-                <!-- Day Selection View (Homepage) -->
-                <div id="daySelection">
+            <!-- Homepage View -->
+            <div id="daySelection">
+                <div class="main-section">
                     <div class="day-selection-container">
                         <h2 class="section-title">WHAT ARE WE HITTING TODAY</h2>
                         <p id="currentDateDisplay"></p>
                         <div id="workoutOptions">
-                            <!-- Stats Bar - ONLY ON HOMEPAGE -->
                             <div class="stats-bar">
                                 <div class="stats-container">
                                     <div class="stat-item"><div class="stat-number" id="streakCount">0</div><div class="stat-label">Streak 🔥</div></div>
@@ -419,75 +423,69 @@
                         <div id="alreadyWorkedOutMessage" style="display: none;"></div>
                     </div>
                 </div>
-
-                <!-- Workout Section -->
-                <div class="workout-section" id="workoutSection">
-                    <h2 id="workoutTitle" class="section-title"></h2>
-                    <div id="exercisesContainer"></div>
-                    <button class="action-btn" onclick="addExerciseToWorkout()">+ Add Exercise</button>
-                    <button class="save-workout-btn" onclick="saveWorkout()">SAVE WORKOUT</button>
-                </div>
-
-                <!-- Community Hub Page -->
-                <div class="community-hub-page" id="communityHubPage">
-                    <h2 class="section-title">FELLOW GYM BROS</h2>
-                    <div class="community-user-list" id="communityUserList"></div>
-                    <div id="leaderboardContainer">
-                        <div class="leaderboard-section"><h3 class="leaderboard-title">🔥 BEAST MODE STREAKS</h3><div id="fullStreakLeaderboard"></div></div>
-                        <div class="leaderboard-section"><h3 class="leaderboard-title">💪 MR. CONSISTENCY</h3><div id="fullConsistencyLeaderboard"></div></div>
-                        <div class="leaderboard-section"><h3 class="leaderboard-title">😤 THE EXCUSERS CLUB</h3><div id="fullExcusersLeaderboard"></div></div>
-                        <div class="leaderboard-section"><h3 class="leaderboard-title">🦵 CHICKEN LEGS WATCHLIST</h3><div id="fullChickenLegsLeaderboard"></div></div>
-                    </div>
-                </div>
-                
-                <!-- User Profile View -->
-                <div class="user-profile-view" id="userProfileView">
-                    <div class="profile-header">
-                        <div class="header-avatar profile-avatar" id="profileAvatar"></div>
-                        <div class="profile-info">
-                            <h3 id="profileName"></h3>
-                            <p id="profileRank"></p>
+                <div class="sidebar">
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">🥩 Daily Protein Target</h3>
+                        <div class="protein-toggle-container" id="proteinContainer">
+                            <div class="protein-toggle-track" id="proteinTrack"></div>
+                            <div class="protein-toggle-handle" id="proteinHandle">🧃</div>
+                            <span class="protein-toggle-label">80g+ Protein Today</span>
                         </div>
                     </div>
-                    <div class="profile-stats-grid" id="profileStatsGrid"></div>
-                    <div class="profile-chart-container">
-                        <h4>Workout Distribution</h4>
-                        <div id="distributionChart"></div>
-                        <div class="pie-chart-legend" id="distributionLegend"></div>
-                    </div>
-                    <div class="profile-chart-container">
-                        <h4>Workout Heatmap</h4>
-                        <div class="calendar-heatmap" id="heatmapContainer"></div>
-                    </div>
-                    <div class="profile-chart-container">
-                        <h4>Personal Records</h4>
-                        <ul class="pr-list" id="prList"></ul>
-                    </div>
-                    <div class="profile-chart-container">
-                        <h4>Workout History</h4>
-                        <div id="profileWorkoutsContainer"></div>
-                    </div>
+                    <div class="sidebar-section"><h3 class="sidebar-title">🏋️ TODAY'S WARRIORS</h3><div id="todaysWarriorsContainer"></div></div>
+                    <div class="sidebar-section"><h3 class="sidebar-title">💪 Daily Roasts</h3><div id="dailyHighlightsContainer"></div></div>
                 </div>
             </div>
 
-            <!-- Sidebar -->
-            <div class="sidebar">
-                <div class="sidebar-section">
-                    <h3 class="sidebar-title">🥩 Daily Protein Target</h3>
-                    <div class="protein-toggle-container" id="proteinContainer">
-                        <div class="protein-toggle-track" id="proteinTrack"></div>
-                        <div class="protein-toggle-handle" id="proteinHandle">🧃</div>
-                        <span class="protein-toggle-label">80g+ Protein Today</span>
+            <!-- Other Views (Full Width) -->
+            <div class="workout-section" id="workoutSection">
+                <h2 id="workoutTitle" class="section-title"></h2>
+                <div id="exercisesContainer"></div>
+                <button class="action-btn" onclick="addExerciseToWorkout()">+ Add Exercise</button>
+                <button class="save-workout-btn" onclick="saveWorkout()">SAVE WORKOUT</button>
+            </div>
+
+            <div class="community-hub-page" id="communityHubPage">
+                <h2 class="section-title">FELLOW GYM BROS</h2>
+                <div class="community-user-list" id="communityUserList"></div>
+                <div id="leaderboardContainer">
+                    <div class="leaderboard-section"><h3 class="leaderboard-title">🔥 BEAST MODE STREAKS</h3><div id="fullStreakLeaderboard"></div></div>
+                    <div class="leaderboard-section"><h3 class="leaderboard-title">💪 MR. CONSISTENCY</h3><div id="fullConsistencyLeaderboard"></div></div>
+                    <div class="leaderboard-section"><h3 class="leaderboard-title">😤 THE EXCUSERS CLUB</h3><div id="fullExcusersLeaderboard"></div></div>
+                    <div class="leaderboard-section"><h3 class="leaderboard-title">🦵 CHICKEN LEGS WATCHLIST</h3><div id="fullChickenLegsLeaderboard"></div></div>
+                </div>
+            </div>
+            
+            <div class="user-profile-view" id="userProfileView">
+                <div class="profile-header">
+                    <div class="header-avatar profile-avatar" id="profileAvatar"></div>
+                    <div class="profile-info">
+                        <h3 id="profileName"></h3>
+                        <p id="profileRank"></p>
                     </div>
                 </div>
-                <div class="sidebar-section"><h3 class="sidebar-title">🏋️ TODAY'S WARRIORS</h3><div id="todaysWarriorsContainer"></div></div>
-                <div class="sidebar-section"><h3 class="sidebar-title">💪 Daily Roasts</h3><div id="dailyHighlightsContainer"></div></div>
+                <div class="profile-stats-grid" id="profileStatsGrid"></div>
+                <div class="profile-chart-container">
+                    <h4>Workout Distribution</h4>
+                    <div id="distributionChart"></div>
+                    <div class="pie-chart-legend" id="distributionLegend"></div>
+                </div>
+                <div class="profile-chart-container">
+                    <h4>Workout Heatmap</h4>
+                    <div class="calendar-heatmap" id="heatmapContainer"></div>
+                </div>
+                <div class="profile-chart-container">
+                    <h4>Personal Records</h4>
+                    <ul class="pr-list" id="prList"></ul>
+                </div>
+                <div class="profile-chart-container">
+                    <h4>Workout History</h4>
+                    <div id="profileWorkoutsContainer"></div>
+                </div>
+                <button class="action-btn remove-btn" onclick="logout()" id="switchUserBtn" style="margin-top: 20px; width: 100%; display: none;">Switch User</button>
             </div>
         </div>
     </div>
-
-    <!-- PWA Install Button (hidden, for app context) -->
-    <button class="install-btn" id="installBtn" style="display: none;">📱 Install App</button>
     
     <script>
         // --- DATA & CONFIG ---
@@ -588,7 +586,7 @@
                 }
             });
             if ('serviceWorker' in navigator) {
-                navigator.serviceWorker.register('service-worker.js').catch(err => console.error('SW registration failed:', err));
+                navigator.serviceWorker.register('/service-worker.js').catch(err => console.error('SW registration failed:', err));
             }
         }
 
@@ -708,6 +706,9 @@
             document.getElementById('profileAvatar').textContent = username.charAt(0);
             document.getElementById('profileName').textContent = username;
             document.getElementById('profileRank').textContent = "Rank: TBD";
+            
+            const switchUserBtn = document.getElementById('switchUserBtn');
+            switchUserBtn.style.display = (username === currentUser) ? 'block' : 'none';
 
             const statsGrid = document.getElementById('profileStatsGrid');
             statsGrid.innerHTML = `<div class="profile-stat-card"><div class="stat-number">${calculateWorkoutStreak(history)}</div><div class="stat-label">Streak</div></div><div class="profile-stat-card"><div class="stat-number">${history.length}</div><div class="stat-label">Total</div></div>`;
