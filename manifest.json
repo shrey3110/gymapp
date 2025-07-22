@@ -1,19 +1,19 @@
 {
-  "name": "GYM BROS TRACKER",
+  "name": "Gym Bros Tracker",
   "short_name": "GymBros",
   "start_url": "index.html",
   "display": "standalone",
   "background_color": "#0a0a0a",
   "theme_color": "#0a0a0a",
-  "description": "Track your gym progress with the bros, and roast them into gains.",
+  "description": "Track your gym progress with the bros.",
   "icons": [
     {
-      "src": "icons/icon-192x192.png",
+      "src": "/icons/icon-192x192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "icons/icon-512x512.png",
+      "src": "/icons/icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
