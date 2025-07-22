@@ -219,13 +219,13 @@
         #alreadyWorkedOutMessage { text-align: center; padding: 40px 20px; background: var(--section-bg); border-radius: 15px; }
 
         /* Workout Section */
-        .workout-section { display: none; background: var(--card-bg); padding: 30px; border-radius: 20px; }
-        .exercise-card { background: var(--section-bg); padding: 20px; border-radius: 15px; margin-bottom: 20px; border: 1px solid #222; }
+        .workout-section { display: none; background: var(--card-bg); padding: 20px; border-radius: 20px; }
+        .exercise-card { background: var(--section-bg); padding: 15px; border-radius: 15px; margin-bottom: 15px; border: 1px solid #222; }
         .exercise-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
-        .exercise-name-input { font-size: 1.3rem; font-weight: 600; background: #333; border: 1px solid #444; color: var(--text-light); padding: 5px; border-radius: 5px; flex-grow: 1; }
-        .set-row { display: grid; grid-template-columns: 60px 1fr 1fr 50px; gap: 10px; align-items: center; margin-bottom: 10px; }
-        .set-label { color: var(--text-muted); }
-        .set-input { background: #222; border: 1px solid #333; color: var(--text-light); padding: 10px; border-radius: 8px; text-align: center; }
+        .exercise-name-input { font-size: 1.2rem; font-weight: 600; background: #333; border: 1px solid #444; color: var(--text-light); padding: 5px; border-radius: 5px; flex-grow: 1; }
+        .set-row { display: grid; grid-template-columns: 50px 1fr 1fr 40px; gap: 8px; align-items: center; margin-bottom: 8px; }
+        .set-label { color: var(--text-muted); font-size: 0.9rem; }
+        .set-input { background: #222; border: 1px solid #333; color: var(--text-light); padding: 10px; border-radius: 8px; text-align: center; width: 100%; }
         .action-btn { background: var(--primary-color); color: var(--text-light); border: none; padding: 8px 12px; border-radius: 8px; cursor: pointer; transition: background 0.2s; }
         .remove-btn { background: var(--danger-color); }
         .action-btn:hover { filter: brightness(1.2); }
@@ -234,6 +234,26 @@
             color: var(--text-light); border: none; padding: 15px 40px; border-radius: 10px;
             font-size: 1.1rem; font-weight: 600; cursor: pointer; margin: 20px auto; display: block;
         }
+
+        /* Mobile-friendly workout layout */
+        @media (max-width: 480px) {
+            .workout-section { padding: 15px; }
+            .set-row {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: auto auto;
+                gap: 10px;
+            }
+            .set-label {
+                grid-column: 1 / -1;
+                margin-bottom: 0;
+            }
+            .set-row .remove-btn {
+                grid-column: 2;
+                grid-row: 2;
+                justify-self: end;
+            }
+        }
+
 
         /* Community Hub Page */
         .community-hub-page { display: none; }
@@ -311,6 +331,14 @@
             transition: transform 0.3s; z-index: 1000;
         }
         .install-btn:hover { transform: scale(1.05); }
+        
+        #installBtnLogin {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 20;
+        }
 
         /* Simple Modal for Confirmation */
         .modal-overlay {
@@ -332,6 +360,7 @@
     <div class="login-screen" id="loginScreen">
         <h1>GYM BROS TRACKER</h1>
         <div class="user-list-container" id="userListContainer"></div>
+        <button class="install-btn" id="installBtnLogin" style="display: none;">📱 Install App</button>
     </div>
 
     <!-- Main App -->
@@ -457,7 +486,7 @@
         </div>
     </div>
 
-    <!-- PWA Install Button -->
+    <!-- PWA Install Button (hidden, for app context) -->
     <button class="install-btn" id="installBtn" style="display: none;">📱 Install App</button>
     
     <script>
@@ -542,13 +571,21 @@
 
         // --- PWA & NAVIGATION ---
         function setupPWA() {
+            const installButton = document.getElementById('installBtnLogin');
             window.addEventListener('beforeinstallprompt', (e) => {
                 e.preventDefault();
                 deferredPrompt = e;
-                document.getElementById('installBtn').style.display = 'block';
+                installButton.style.display = 'block';
             });
-            document.getElementById('installBtn').addEventListener('click', () => {
-                if(deferredPrompt) deferredPrompt.prompt();
+            installButton.addEventListener('click', () => {
+                if(deferredPrompt) {
+                    deferredPrompt.prompt();
+                    deferredPrompt.userChoice.then(choiceResult => {
+                        if(choiceResult.outcome === 'accepted') {
+                            installButton.style.display = 'none';
+                        }
+                    });
+                }
             });
             if ('serviceWorker' in navigator) {
                 navigator.serviceWorker.register('service-worker.js').catch(err => console.error('SW registration failed:', err));
