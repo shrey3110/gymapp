@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,20 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GYM BROS TRACKER</title>
 
-    <!-- PWA Meta Tags -->
     <meta name="theme-color" content="#0a0a0a">
     <meta name="description" content="Track your gym progress with the bros, and roast them into gains.">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="Gym Bros">
     
-    <!-- PWA Manifest (Now linked to an external file) -->
     <link rel="manifest" href="manifest.json">
     
-    <!-- Apple Touch Icon (using a simple SVG fallback to avoid large base64) -->
     <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath fill='%23667eea' d='M256 64C150.13 64 128 86.13 128 192v96c0 105.87 22.13 128 128 128s128-22.13 128-128v-96c0-105.87-22.13-128-128-128z'%3E%3C/path%3E%3C/svg%3E">
     
-    <!-- Google Fonts: Oswald (Heading), Inter (Body) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
@@ -141,7 +136,7 @@
         @keyframes float-5 { 0% { transform: translate(-50%, -50%) translate(0vw, 0vh) scale(1) rotate(0deg); } 25% { transform: translate(-50%, -50%) translate(8vw, 22vh) scale(1.03) rotate(1deg); } 50% { transform: translate(-50%, -50%) translate(-22vw, -8vh) scale(0.96) rotate(-4deg); } 75% { transform: translate(-50%, -50%) translate(15vw, -15vh) scale(1.09) rotate(6deg); } 100% { transform: translate(-50%, -50%) translate(0vw, 0vh) scale(1) rotate(0deg); } }
         @keyframes float-6 { 0% { transform: translate(-50%, -50%) translate(0vw, 0vh) scale(1) rotate(0deg); } 25% { transform: translate(-50%, -50%) translate(-15vw, -18vh) scale(0.92) rotate(-5deg); } 50% { transform: translate(-50%, -50%) translate(25vw, 10vh) scale(1.07) rotate(3deg); } 75% { transform: translate(-50%, -50%) translate(-8vw, 20vh) scale(0.99) rotate(-1deg); } 100% { transform: translate(-50%, -50%) translate(0vw, 0vh) scale(1) rotate(0deg); } }
         @keyframes float-7 { 0% { transform: translate(-50%, -50%) translate(0vw, 0vh) rotate(0deg); } 25% { transform: translate(-50%, -50%) translate(12vw, 25vh) scale(1.06) rotate(4deg); } 50% { transform: translate(-50%, -50%) translate(-20vw, -10vh) scale(0.93) rotate(-6deg); } 75% { transform: translate(-50%, -50%) translate(5vw, -22vh) scale(1.04) rotate(2deg); } 100% { transform: translate(-50%, -50%) translate(0vw, 0vh) rotate(0deg); } }
-        @keyframes float-8 { 0% { transform: translate(-50%, -50%) translate(0vw, 0vh) scale(1) rotate(0deg); } 25% { transform: translate(-50%, -50%) translate(-25vw, 5vh) scale(0.91) rotate(-8deg); } 50% { transform: translate(-50%, -50%) translate(10vw, -20vh) scale(1.08) rotate(7deg); } 75% { transform: translate(-50%, -50%) translate(-12vw, 15vh) scale(0.96) rotate(-3deg); } 100% { transform: translate(-50%, -50%) translate(0vw, 0vh) rotate(0deg); } }
+        @keyframes float-8 { 0% { transform: translate(-50%, -50%) translate(0vw, 0vh) scale(1) rotate(0deg); } 25% { transform: translate(-50%, -50%) translate(-25vw, 5vh) scale(0.91) rotate(-8deg); } 50% { transform: translate(-50%, -50%) translate(10vw, -20vh) scale(1.08) rotate(7deg); } 75% { transform: translate(-50%, -50%) translate(-12vw, 15vh) scale(0.96) rotate(-3deg); } 100% { transform: translate(-50%, -50%) translate(0vw, 0vh) scale(1) rotate(0deg); } }
         @keyframes float-9 { 0% { transform: translate(-50%, -50%) translate(0vw, 0vh) scale(1) rotate(0deg); } 25% { transform: translate(-50%, -50%) translate(18vw, -10vh) scale(1.02) rotate(2deg); } 50% { transform: translate(-50%, -50%) translate(-5vw, 22vh) scale(0.98) rotate(-4deg); } 75% { transform: translate(-50%, -50%) translate(22vw, 8vh) scale(1.05) rotate(5deg); } 100% { transform: translate(-50%, -50%) translate(0vw, 0vh) rotate(0deg); } }
 
 
@@ -1412,17 +1407,13 @@
     </style>
 </head>
 <body>
-    <!-- Login Screen -->
     <div class="login-screen" id="loginScreen">
         <h1>GYM BROS TRACKER</h1>
         <div class="user-list-container" id="userListContainer">
-            <!-- User cards will be dynamically loaded here -->
-        </div>
+            </div>
     </div>
 
-    <!-- Main App -->
     <div class="app" id="app" style="display: none;">
-        <!-- Header -->
         <div class="app-header">
             <div class="header-content">
                 <button class="back-btn" id="appBackButton" onclick="goBack()">⬅ BACK</button>
@@ -1430,14 +1421,12 @@
                     <div class="header-avatar">👤</div>
                     <div class="header-user-name" id="userDisplay"></div>
                 </button>
-                <!-- New "Fellow Gym Bros" button -->
                 <button class="fellow-gym-bros-btn" onclick="showView('statsLeaderboardPage')">Fellow Gym Bros</button>
                 <button class="header-action-btn" id="adminBtn" onclick="toggleAdminPanel()" style="display: none;">⚙️ Admin</button>
                 <button class="header-action-btn" onclick="logout()">Switch User</button>
             </div>
         </div>
 
-        <!-- Stats Bar (remains on main dashboard for quick overview) -->
         <div class="stats-bar">
             <div class="stats-container">
                 <div class="stat-item">
@@ -1455,14 +1444,11 @@
             </div>
         </div>
 
-        <!-- Main Content (contains Day Selection, Workout Section, User Profile, Stats/Leaderboard Page, Community) -->
         <div class="main-content">
             <div class="main-section">
-                <!-- Day Selection (Default landing page) -->
                 <div class="day-selection" id="daySelection">
                     <h2 class="section-title">WHAT ARE WE HITTING TODAY</h2>
                     
-                    <!-- 4 Day Split -->
                     <div class="split-section">
                         <div class="split-title">4 DAY SPLIT</div>
                         <div class="day-buttons">
@@ -1473,7 +1459,6 @@
                         </div>
                     </div>
 
-                    <!-- PPL 3 Day Split -->
                     <div class="split-section">
                         <div class="split-title">PPL - 3 DAY SPLIT</div>
                         <div class="day-buttons">
@@ -1484,7 +1469,6 @@
                     </div>
                 </div>
 
-                <!-- Workout Section (hidden by default, shown when day selected) -->
                 <div class="workout-section" id="workoutSection">
                     <h2 id="workoutTitle" class="section-title"></h2>
                     <div id="exercisesContainer"></div>
@@ -1497,7 +1481,6 @@
                     <button class="save-workout-btn" onclick="saveWorkout()">SAVE WORKOUT</button>
                 </div>
 
-                <!-- My Profile Section (New) -->
                 <div class="my-profile-section" id="myProfileSection">
                     <h2 class="section-title">MY PROFILE</h2>
                     <div class="my-profile-header">
@@ -1556,12 +1539,10 @@
                     </div>
                 </div>
 
-                <!-- Other User Profile View (hidden by default, shown when community member clicked) -->
                 <div class="user-profile-view" id="userProfileView">
                     <h2 class="profile-title"></h2>
                     <div class="my-profile-header">
-                        <div class="profile-avatar" style="background: #555;">👥</div> <!-- Different avatar for others' profiles -->
-                        <div class="profile-info">
+                        <div class="profile-avatar" style="background: #555;">👥</div> <div class="profile-info">
                             <h3 id="otherProfileName"></h3>
                             <p class="profile-rank" id="otherProfileRank"></p>
                         </div>
@@ -1607,62 +1588,50 @@
                     <div id="otherUserProfileWorkouts"></div>
                 </div>
 
-                <!-- Stats & Leaderboard Page (New View - hidden by default) -->
                 <div class="stats-leaderboard-page" id="statsLeaderboardPage">
                     <h2 class="section-title">ALL STATS & LEADERBOARDS</h2>
                     
-                    <!-- Beast Mode Streaks -->
                     <div class="sidebar-section">
                         <h3 class="sidebar-title">🔥 BEAST MODE STREAKS</h3>
                         <div id="fullStreakLeaderboard"></div>
                     </div>
 
-                    <!-- Mr. Consistency -->
                     <div class="sidebar-section">
                         <h3 class="sidebar-title">💪 MR. CONSISTENCY</h3>
                         <div id="fullConsistencyLeaderboard"></div>
                     </div>
 
-                    <!-- Excusers Club -->
                     <div class="sidebar-section">
                         <h3 class="sidebar-title">😤 THE EXCUSERS CLUB</h3>
                         <div id="fullExcusersLeaderboard"></div>
                     </div>
 
-                    <!-- Chicken Legs -->
                     <div class="sidebar-section">
                         <h3 class="sidebar-title">🦵 CHICKEN LEGS WATCHLIST</h3>
                         <div id="fullChickenLegsLeaderboard"></div>
                     </div>
                 </div>
 
-                <!-- Community Section (default view for daily highlights) -->
                 <div class="community-section" id="communitySection">
                     <h2 class="section-title">Community Progress 🏋️</h2>
                     <div id="communityContainer"></div>
                 </div>
             </div>
 
-            <!-- Sidebar (Daily Highlights & Protein tracking) -->
             <div class="sidebar">
-                <!-- My Profile Button (moved here) -->
                 <button class="show-all-btn" onclick="showView('myProfileSection')" style="margin-bottom: 20px;">My Profile</button>
 
-                <!-- Today's Warriors Breakdown (New Section) -->
                 <div class="sidebar-section todays-warriors-breakdown">
                     <h3>🏋️ TODAY'S WARRIORS</h3>
                     <ul id="todaysWarriorsBreakdownList">
-                        <!-- Content generated by JS -->
-                    </ul>
+                        </ul>
                 </div>
 
-                <!-- Daily Highlights -->
                 <div class="sidebar-section">
                     <h3 class="sidebar-title">Daily Roasts & Highlights 💪</h3>
                     <div id="dailyHighlightsContainer"></div>
                 </div>
 
-                <!-- Protein Tracking Section -->
                 <div class="sidebar-section">
                     <h3 class="sidebar-title">🥩 Daily Protein Target</h3>
                     <div class="protein-toggle-container" onclick="toggleProteinStatus()">
@@ -1672,19 +1641,16 @@
                         <span class="protein-toggle-label">80g+ Protein Today</span>
                     </div>
                     <div class="protein-stats" id="proteinStats" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
-                         <!-- Protein stats will be loaded here -->
-                    </div>
+                         </div>
                     <button class="show-all-btn" onclick="toggleProteinShoutouts()">Show Community Protein Updates</button>
                     <div class="protein-shoutouts" id="proteinShoutouts" style="background: #0a0a0a; padding: 15px; border-radius: 10px; margin-top: 15px; display: none;">
                         <h4 style="color: var(--secondary-color); margin-bottom: 10px; text-align: center;">Community Protein Updates</h4>
-                        <!-- Shoutouts will be loaded here -->
-                    </div>
+                        </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- PWA Install Button -->
     <button class="install-btn" id="installBtn" style="display: none;">
         📱 Install App
     </button>
@@ -1917,6 +1883,14 @@
                 targetSection.style.display = 'block';
             }
             currentView = viewId;
+
+            // *** FIX: Load data when specific views are shown ***
+            if (viewId === 'statsLeaderboardPage') {
+                loadLeaderboards();
+            }
+            if (viewId === 'myProfileSection') {
+                loadMyProfile();
+            }
 
             // Adjust back button visibility/action based on view
             const backBtn = document.getElementById('appBackButton');
@@ -2558,8 +2532,7 @@
             card.innerHTML = `
                 <div class="exercise-header">
                     <input type="text" class="exercise-name" value="${exerciseName}" readonly>
-                    <!-- Progress Indicator will be generated here by renderProgressChart -->
-                </div>
+                    </div>
                 <div class="sets-container" id="sets-${index}">
                     ${createSetRow(index, 0)}
                 </div>
